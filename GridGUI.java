@@ -96,7 +96,17 @@ public class GridGUI extends JFrame{
 			if(yesNo == JOptionPane.YES_OPTION){
 				//open up new game
 				
-				Grid newGrid = new Grid();
+				grid = new Grid(); 
+		                bombGrid = grid.getBombGrid();
+		                countGrid = grid.getCountGrid(); 
+		                bombNum = grid.getNumBombs(); 
+		        
+		               for (int i = 0; i < numRows; i++) {
+		                   for (int j = 0; j < numColumns; j++) {
+		                       buttons[i][j].setText("");
+		                       buttons[i][j].setEnabled(true);
+		                   }
+		               }
 				
 			}else {
 				System.exit(EXIT_ON_CLOSE);
